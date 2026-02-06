@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400&family=Varela+Round&display=swap');
 
-/* Basic Reset */
+/* Reseteo Básico */
 * {
     margin: 0;
     padding: 0;
@@ -15,27 +15,27 @@ body {
     background-color: #EBEBFF;
 }
 
-/* Container */
+/* Contenedor Principal */
 .container {
     width: 1200px;
     margin: 0 auto;
     background-color: #fff;
     min-height: 100vh;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-    /* Subtle shadow for depth */
+    /* Sombra sutil para profundidad */
     display: flex;
     align-items: stretch;
 }
 
-/* Sidebar */
+/* Barra Lateral (Sidebar) */
 aside {
     width: 250px;
     background-color: #fff;
-    /* Sidebar background */
+    /* Fondo de la barra lateral */
     border-right: 1px solid #94BDD6;
-    /* Sidebar separator */
+    /* Separador de la barra lateral */
     padding-top: 250px;
-    /* Align with content start below header approx */
+    /* Alinear con el inicio del contenido aprox */
     flex-shrink: 0;
 }
 
@@ -55,10 +55,10 @@ nav a {
     font-weight: bold;
     font-style: italic;
     font-size: 16px;
-    /* Sidebar font size */
+    /* Tamaño de fuente barra lateral */
     display: block;
     padding: 10px 20px 10px 40px;
-    /* Indent */
+    /* Sangría */
     transition: all 0.3s;
 }
 
@@ -68,7 +68,7 @@ nav a.active {
     color: #fff;
 }
 
-/* Main Content */
+/* Contenido Principal */
 main {
     flex-grow: 1;
     background-color: #fff;
@@ -76,38 +76,38 @@ main {
     position: relative;
 }
 
-/* Header Wrapper for Overlay */
+/* Envoltorio de la Cabecera para Superposición */
 .header-wrapper {
     position: relative;
     width: 100%;
     margin-bottom: 30px;
 }
 
-/* Hero Image */
+/* Imagen Hero */
 .hero-image {
     width: 100%;
     height: auto;
     display: block;
 }
 
-/* Page Title "HacTe..." Overlaid */
+/* Título de Página "HacTe..." Superpuesto */
 h1.main-title {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* Centering */
+    /* Centrado */
     width: 90%;
-    /* Prevent touching edges */
+    /* Evitar tocar bordes */
 
     font-family: 'Varela Round', sans-serif;
     font-size: 44px;
-    /* Large Title Size */
+    /* Tamaño grande */
     text-align: center;
     color: #fff;
-    /* White Text */
+    /* Texto blanco */
 
-    /* Text Shadow to ensure readability against blue waves */
+    /* Sombra de texto para asegurar legibilidad contra ondas azules */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
     margin: 0;
@@ -116,12 +116,12 @@ h1.main-title {
     font-weight: normal;
 }
 
-/* The Blue Gradient Box (Intro) */
+/* Caja de Gradiente Azul (Intro) */
 .intro-box {
     background: linear-gradient(to bottom, #94BDD6 0%, #EBF7FF 100%);
     padding: 30px 40px;
     margin: 0 50px 30px 50px;
-    /* Margins to center it */
+    /* Márgenes para centrar */
     text-align: center;
     border-radius: 2px;
 }
@@ -134,25 +134,25 @@ h1.main-title {
     border: none;
     color: #000;
     margin-top: 0;
-    /* Box specific reset */
+    /* Reseteo específico para caja */
     padding-bottom: 0;
 }
 
 .intro-box p {
     text-align: justify;
     text-align-last: center;
-    /* Nice centering for justified block? Or just center. Text says "Explore... field." */
+    /* Centrado agradable para bloque justificado */
     text-align: center;
     margin: 0;
     font-size: 15px;
 }
 
-/* Content Area */
+/* Área de Contenido */
 .content-wrapper {
     padding: 0 50px;
 }
 
-/* Standard H2 */
+/* H2 Estándar */
 h2 {
     font-family: 'Varela Round', sans-serif;
     font-size: 22px;
@@ -164,7 +164,7 @@ h2 {
     padding-bottom: 5px;
 }
 
-/* Custom List (Hac Te is) */
+/* Lista Personalizada (Hac Te is) */
 .custom-list {
     list-style: none;
     margin-top: 20px;
@@ -180,29 +180,29 @@ h2 {
 
 .custom-list li::before {
     content: "≡";
-    /* Hamburger icon lookalike */
+    /* Icono tipo hamburguesa */
     position: absolute;
     left: 0;
     top: 2px;
     color: #000080;
-    /* Navy Blue */
+    /* Azul Marino */
     font-weight: bold;
     font-size: 20px;
     line-height: 1;
 }
 
-/* Press Releases */
+/* Notas de Prensa (Press Releases) */
 .press-release {
     background-color: #fff;
     margin-bottom: 25px;
-    /* No border on outside container per se, mostly clean */
+    /* Sin borde exterior per se, mayormente limpio */
 }
 
 .press-header {
     background-color: #94BDD6;
-    /* Blue header */
+    /* Cabecera Azul */
     color: #333;
-    /* Dark text? Or standard? */
+    /* Texto oscuro */
     padding: 8px 15px;
     font-family: 'Varela Round', sans-serif;
     font-weight: bold;
@@ -212,12 +212,12 @@ h2 {
 
 .press-body {
     background-color: #EBF7FF;
-    /* Light blue body */
+    /* Cuerpo azul claro */
     border: 1px solid #94BDD6;
     border-top: none;
-    /* Connect to header */
+    /* Conectar con cabecera */
     padding: 20px 20px 20px 80px;
-    /* Left padding for Quotes */
+    /* Padding izquierdo para Comillas */
     position: relative;
     display: flex;
     flex-direction: column;
@@ -251,7 +251,7 @@ h2 {
     color: #999;
 }
 
-/* News Header */
+/* Cabecera de Noticias */
 .news-header-bar {
     background: linear-gradient(to bottom, #94BDD6 0%, #EBF7FF 100%);
     padding: 20px;
@@ -267,13 +267,13 @@ h2 {
     background: none;
 }
 
-/* News Cards */
+/* Tarjetas de Noticias (News Cards) */
 .news-card {
     border: 1px solid #94BDD6;
     border-radius: 10px;
     background-color: #fff;
     margin: 30px 80px;
-    /* Narrower columns */
+    /* Columnas más estrechas */
     text-align: center;
     overflow: hidden;
     padding-bottom: 20px;
@@ -292,10 +292,10 @@ h2 {
 .news-card img {
     margin-top: 25px;
     width: 280px;
-    /* Oval shape */
+    /* Forma Ovalada */
     height: 160px;
     border-radius: 50%;
-    /* Pure Oval */
+    /* Ovalo Puro */
     border: 5px solid #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     object-fit: cover;
@@ -310,7 +310,7 @@ h2 {
     text-align: center;
 }
 
-/* Footer */
+/* Pie de Página (Footer) */
 footer {
     background-color: #94BDD6;
     width: 100%;
@@ -350,7 +350,7 @@ footer {
     display: inline-flex;
     gap: 20px;
     border: 1px solid #000080;
-    /* Navy box around logos */
+    /* Caja Azul Marino alrededor de logos */
     padding: 10px 20px;
     background-color: #fff;
 }
