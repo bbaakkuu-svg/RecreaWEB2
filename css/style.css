@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Varela+Round&display=swap');
+
 /* Basic Reset */
 * {
     margin: 0;
@@ -6,17 +8,20 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Arvo', serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f4f4f4;
+    background-color: #EBEBFF;
+    /* PDF Requirement */
 }
 
 /* Header & Navigation */
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #EBEBFF;
+    /* Matching bg */
     padding: 1rem 0;
+    border-bottom: 5px solid #94BDD6;
+    /* implied separator */
 }
 
 nav {
@@ -28,54 +33,108 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 0;
+    flex-direction: column;
+    /* Vertical menu as per PDF hints "Menú vertical"? verification needed. Text says "Menú vertical. Los dos primeros... el menú lateral" but also says "Navegación del sitio" with images?
+    Wait. Text says: "Menú vertical. Los dos primeros elementos..". 
+    However, often "vertical menu" might imply a sidebar. But looking at standard simple sites, maybe it's a side menu? 
+    "El contenedor central de la web tendrá un ancho de 1200px".
+    Let's assume standard top nav for now unless I see "sidebar". 
+    Re-reading: "bordes que separan el menú lateral y los encabezados". This suggests a SIDEBAR layout (Lateral Menu).
+    "El contenedor central ... 1200px".
+    Maybe the layout is: Left Column (Menu), Right Column (Content).
+    
+    Let's switch to Grid or Flex for the container.
+    */
+}
+
+/* Layout adjustment for Sidebar */
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    min-height: 80vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* Sidebar layout */
+    flex-direction: row;
+}
+
+/* Sidebar Styling */
+aside {
+    width: 250px;
+    background-color: #EBEBFF;
+    padding: 20px;
+    border-right: 5px solid #94BDD6;
+}
+
+nav ul {
+    flex-direction: column;
+    gap: 10px;
 }
 
 nav a {
-    color: white;
+    color: #666;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1.2rem;
     font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 4px;
+    display: block;
+    padding: 10px;
     transition: background-color 0.3s;
 }
 
-nav a:hover, nav a.active {
-    background-color: #555;
+nav a:hover,
+nav a.active {
+    background-color: #94BDD6;
+    color: white;
 }
 
-/* Main Layout */
-.container {
-    width: 80%;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    min-height: 80vh;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+/* Main Content Area */
+main {
+    flex: 1;
+    padding: 40px;
 }
 
-/* Header Image */
+/* Header Image / Hero */
 .hero-image {
     width: 100%;
     height: auto;
     display: block;
-    margin-bottom: 2rem;
-    border-radius: 4px;
 }
 
-/* Content Sections */
-article {
-    margin-bottom: 2rem;
-}
-
-h1, h2, h3 {
+/* Typography */
+h1,
+h2,
+h3 {
+    font-family: 'Varela Round', sans-serif;
     color: #2c3e50;
     margin-bottom: 1rem;
 }
 
-p {
-    margin-bottom: 1rem;
+h1 {
+    /* Gradient header hinted in PDF */
+    background: linear-gradient(to right, #94BDD6, #EBF7FF);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* Press Releases Section (Index) */
+.press-release {
+    background-color: #EBF7FF;
+    border: 1px solid #94BDD6;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.press-release h3 {
+    background-color: #94BDD6;
+    color: white;
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 3px;
+    margin-bottom: 10px;
 }
 
 /* News List */
@@ -83,8 +142,16 @@ p {
     display: flex;
     align-items: flex-start;
     margin-bottom: 20px;
-    border-bottom: 1px solid #eee;
     padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.news-item h3 {
+    background-color: #94BDD6;
+    /* PDF: "fondo de las cabeceras de las fichas de la página News" */
+    color: white;
+    padding: 5px 10px;
+    display: inline-block;
 }
 
 .news-item img {
@@ -94,16 +161,13 @@ p {
     border-radius: 4px;
 }
 
-.news-content {
-    flex: 1;
-}
-
-/* Footer & Logos */
+/* Footer */
 footer {
-    background-color: #e3e3e3;
+    background-color: #94BDD6;
+    /* PDF Requirement */
     padding: 2rem 0;
-    margin-top: 2rem;
     text-align: center;
+    clear: both;
 }
 
 .partners {
@@ -126,12 +190,26 @@ footer {
     opacity: 1;
 }
 
+/* Credits in Footer */
+.credits {
+    font-size: 0.9rem;
+    margin-top: 20px;
+    color: white;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .container {
-        width: 95%;
+        width: 100%;
+        flex-direction: column;
     }
-    
+
+    aside {
+        width: 100%;
+        border-right: none;
+        border-bottom: 5px solid #94BDD6;
+    }
+
     .news-item {
         flex-direction: column;
     }

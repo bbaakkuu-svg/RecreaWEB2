@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,43 +8,79 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
+
 <body>
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Inicio</a></li>
-                <li><a href="news.html">Noticias</a></li>
-            </ul>
-        </nav>
-    </header>
-
     <div class="container">
-        <!-- Hero Section -->
-        <img src="images/cabecera.jpg" alt="Cabecera RecreaWEB" class="hero-image">
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">What is it?</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="#">Entities</a></li>
+                    <li><a href="#">Activities</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </nav>
+        </aside>
 
         <main>
+            <img src="images/cabecera.jpg" alt="Cabecera HacTe" class="hero-image">
+
+            <header>
+                <h1>HacTe. Hub of Art, Science and Technology</h1>
+            </header>
+
             <article>
-                <h1>Bienvenidos a RecreaWEB</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                
-                <h2>Nuestro Proyecto</h2>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                <h2>WHAT IS HAC TE?</h2>
+                <p>Explore and develop intersections between art, science and technology to boost the digital
+                    transformation of society: this is the aim of Hac Te (Art, Science and Technology Hub), promoted by
+                    catalan institutions of great relevance to make Barcelona a global centre for research, training,
+                    dissemination, transfer and production in this field.</p>
+
+                <h2>Hac Te is</h2>
+                <ul>
+                    <li>A hybrid environment connecting knowledge and disciplines in art, science and technology</li>
+                    <li>The interconnection of academic fields and different actors involved in interdisciplinarity</li>
+                    <li>An open future for all society and a driver of digital transformation</li>
+                </ul>
             </article>
+
+            <section class="press-releases">
+                <h2>Press Releases</h2>
+
+                <div class="press-release">
+                    <h3>La Vanguardia</h3>
+                    <p><strong>Una apuesta de éxito para Barcelona</strong><br>Miquel Molina</p>
+                </div>
+
+                <div class="press-release">
+                    <h3>El País</h3>
+                    <p><strong>La intersección entre arte y ciencia en el mundo post-pandémico</strong><br>Xavier Ruiz,
+                        Manuela Reyes</p>
+                </div>
+            </section>
         </main>
     </div>
 
     <footer>
-        <p>&copy; 2026 RecreaWEB2. Todos los derechos reservados.</p>
+        <div class="credits">
+            <p>Reto 2 | Realizado por: Student Name</p>
+            <p>Asignatura "HTML y CSS"</p>
+        </div>
+
+        <h3>Who is in Hac Te</h3>
         <div class="partners">
-            <img src="images/upc.png" alt="Logotipo UPC">
-            <img src="images/UOC.png" alt="Logotipo UOC">
-            <img src="images/bist.png" alt="Logotipo BIST">
-            <img src="images/fira-barcelona.png" alt="Logotipo Fira Barcelona">
+            <a href="https://www.upc.edu/ca"><img src="images/upc.png" alt="Logotipo UPC"></a>
+            <a href="https://www.uoc.edu/portal/ca/index.html"><img src="images/UOC.png" alt="Logotipo UOC"></a>
+            <a href="https://bist.eu/"><img src="images/bist.png" alt="Logotipo BIST"></a>
+            <a href="https://www.firabarcelona.com/es/"><img src="images/fira-barcelona.png"
+                    alt="Logotipo Fira Barcelona"></a>
+            <!-- Gracie logic wasn't explicitly linked in my parsed text but assuming it's a partner -->
             <img src="images/gracie.png" alt="Logotipo Gracie">
         </div>
     </footer>
 
 </body>
+
 </html>
