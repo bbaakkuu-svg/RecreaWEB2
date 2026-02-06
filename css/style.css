@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400&family=Varela+Round&display=swap');
 
 /* Basic Reset */
 * {
@@ -9,213 +9,325 @@
 
 body {
     font-family: 'Arvo', serif;
-    line-height: 1.6;
+    font-size: 15px;
+    line-height: 1.5;
     color: #333;
     background-color: #EBEBFF;
-    /* PDF Requirement */
 }
 
-/* Header & Navigation */
-header {
-    background-color: #EBEBFF;
-    /* Matching bg */
-    padding: 1rem 0;
-    border-bottom: 5px solid #94BDD6;
-    /* implied separator */
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 0;
-    flex-direction: column;
-    /* Vertical menu as per PDF hints "Menú vertical"? verification needed. Text says "Menú vertical. Los dos primeros... el menú lateral" but also says "Navegación del sitio" with images?
-    Wait. Text says: "Menú vertical. Los dos primeros elementos..". 
-    However, often "vertical menu" might imply a sidebar. But looking at standard simple sites, maybe it's a side menu? 
-    "El contenedor central de la web tendrá un ancho de 1200px".
-    Let's assume standard top nav for now unless I see "sidebar". 
-    Re-reading: "bordes que separan el menú lateral y los encabezados". This suggests a SIDEBAR layout (Lateral Menu).
-    "El contenedor central ... 1200px".
-    Maybe the layout is: Left Column (Menu), Right Column (Content).
-    
-    Let's switch to Grid or Flex for the container.
-    */
-}
-
-/* Layout adjustment for Sidebar */
+/* Container */
 .container {
     width: 1200px;
     margin: 0 auto;
     background-color: #fff;
-    min-height: 80vh;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-height: 100vh;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
     display: flex;
-    /* Sidebar layout */
-    flex-direction: row;
+    align-items: stretch;
 }
 
-/* Sidebar Styling */
+/* Sidebar */
 aside {
     width: 250px;
-    background-color: #EBEBFF;
-    padding: 20px;
-    border-right: 5px solid #94BDD6;
+    background-color: #fff;
+    border-right: 1px solid #94BDD6;
+    /* Padding adjustments to align with content if needed */
+    padding-top: 150px;
+    padding-left: 0;
 }
 
 nav ul {
-    flex-direction: column;
-    gap: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    margin-bottom: 5px;
 }
 
 nav a {
-    color: #666;
     text-decoration: none;
-    font-family: 'Varela Round', sans-serif;
-    font-size: 1.2rem;
+    color: #666;
+    font-family: 'Arvo', serif;
     font-weight: bold;
+    font-style: italic;
+    font-size: 16px;
     display: block;
-    padding: 10px;
-    transition: background-color 0.3s;
+    padding: 10px 20px 10px 40px;
+    /* Indent */
+    transition: all 0.3s;
 }
 
 nav a:hover,
 nav a.active {
     background-color: #94BDD6;
-    color: white;
+    color: #fff;
 }
 
-/* Main Content Area */
+/* Main Content */
 main {
-    flex: 1;
-    padding: 40px;
+    flex-grow: 1;
+    background-color: #fff;
+    padding-bottom: 40px;
 }
 
-/* Header Image / Hero */
+/* Hero Image */
 .hero-image {
     width: 100%;
     height: auto;
     display: block;
 }
 
-/* Typography */
-h1,
-h2,
-h3 {
+/* Page Title "HacTe..." */
+h1.main-title {
     font-family: 'Varela Round', sans-serif;
-    color: #2c3e50;
-    margin-bottom: 1rem;
+    font-size: 36px;
+    text-align: center;
+    color: #fff;
+    /* White text with shadow to look like image? Or Dark Gray? 
+       In the image it looks like "WordArt" style: White fill, dark outline/shadow?
+       Or standard dark gray on the white bg.
+       "HacTe. Hub of Art..."
+       Let's stick to a clean Dark Gray or the #94BDD6 if it matches header.
+       The PDF said "Varela Round para el encabezado principal".
+       Let's try a distinct Color + Shadow.
+    */
+    color: #555;
+    text-shadow: 2px 2px 0px #eee;
+    margin: 20px 0;
+    text-transform: none;
+    /* "HacTe. Hub..." mixed case */
+    font-weight: bold;
 }
 
-h1 {
-    /* Gradient header hinted in PDF */
-    background: linear-gradient(to right, #94BDD6, #EBF7FF);
-    padding: 10px;
-    border-radius: 4px;
+/* The Blue Gradient Box (Intro) */
+.intro-box {
+    background: linear-gradient(to bottom, #94BDD6 0%, #EBF7FF 100%);
+    padding: 40px;
+    margin: 0 50px 30px 50px;
+    /* Margins to center it */
+    text-align: center;
+    border-radius: 2px;
 }
 
-/* Press Releases Section (Index) */
-.press-release {
-    background-color: #EBF7FF;
-    border: 1px solid #94BDD6;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-}
-
-.press-release h3 {
-    background-color: #94BDD6;
-    color: white;
-    padding: 5px 10px;
-    display: inline-block;
-    border-radius: 3px;
-    margin-bottom: 10px;
-}
-
-/* News List */
-.news-item {
-    display: flex;
-    align-items: flex-start;
+.intro-box h2 {
+    font-family: 'Varela Round', sans-serif;
+    text-transform: uppercase;
+    font-size: 24px;
     margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
+    border: none;
+    /* No underline in the box */
+    color: #000;
 }
 
-.news-item h3 {
+.intro-box p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Content Area */
+.content-wrapper {
+    padding: 0 50px;
+}
+
+/* Standard H2 */
+h2 {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 24px;
+    color: #000;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    border-bottom: 1px solid #94BDD6;
+    padding-bottom: 10px;
+}
+
+/* Custom List (Hac Te is) */
+.custom-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.custom-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.custom-list li::before {
+    content: "≡";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #000080;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1;
+}
+
+/* Press Releases */
+.press-release {
+    background-color: #fff;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    /* Subtle shadow */
+}
+
+.press-header {
     background-color: #94BDD6;
-    /* PDF: "fondo de las cabeceras de las fichas de la página News" */
-    color: white;
-    padding: 5px 10px;
-    display: inline-block;
+    /* Blue header */
+    color: #333;
+    padding: 10px 15px;
+    font-family: 'Varela Round', sans-serif;
+    /* Matching headers */
+    font-weight: bold;
+    font-size: 14px;
+    border: 1px solid #94BDD6;
 }
 
-.news-item img {
-    margin-right: 20px;
-    max-width: 150px;
-    height: auto;
-    border-radius: 4px;
+.press-body {
+    background-color: #EBF7FF;
+    /* Light blue body */
+    border: 1px solid #94BDD6;
+    border-top: none;
+    padding: 20px;
+    padding-left: 80px;
+    /* Space for quote */
+    position: relative;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.press-body::before {
+    content: "“";
+    font-family: 'Times New Roman', serif;
+    font-size: 80px;
+    color: #94BDD6;
+    position: absolute;
+    left: 20px;
+    top: 0px;
+    line-height: 1;
+}
+
+.press-body p {
+    color: #777;
+    font-style: italic;
+    margin: 0;
+    text-align: left;
+}
+
+.press-body .author {
+    display: block;
+    text-align: right;
+    font-style: italic;
+    font-size: 12px;
+    margin-top: 10px;
+    color: #999;
+}
+
+/* News Header */
+.news-header-bar {
+    background: linear-gradient(to bottom, #94BDD6 0%, #EBF7FF 100%);
+    padding: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.news-header-bar h2 {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 24px;
+}
+
+/* News Cards */
+.news-card {
+    border: 1px solid #94BDD6;
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 30px 50px;
+    text-align: center;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+.news-card h3 {
+    background-color: #94BDD6;
+    color: #000;
+    margin: 0;
+    padding: 15px;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 16px;
+    border-bottom: 1px solid #94BDD6;
+}
+
+.news-card img {
+    margin-top: 20px;
+    width: 250px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+
+.news-card p {
+    padding: 0 20px;
+    margin-top: 15px;
+    font-style: italic;
+    font-size: 13px;
+    color: #333;
+    text-align: center;
 }
 
 /* Footer */
 footer {
     background-color: #94BDD6;
-    /* PDF Requirement */
-    padding: 2rem 0;
-    text-align: center;
-    clear: both;
+    width: 100%;
 }
 
-.partners {
+.footer-inner {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 1rem;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: #fff;
 }
 
-.partners img {
-    height: 50px;
-    width: auto;
-    opacity: 0.8;
-    transition: opacity 0.3s;
+.footer-info p {
+    margin: 3px 0;
+    font-size: 12px;
+    text-align: left;
+    color: #fff;
 }
 
-.partners img:hover {
-    opacity: 1;
+.footer-info.right p {
+    text-align: right;
 }
 
-/* Credits in Footer */
-.credits {
-    font-size: 0.9rem;
-    margin-top: 20px;
-    color: white;
+.who-is {
+    font-size: 20px;
+    color: #000;
+    border-bottom: 1px solid #94BDD6;
+    margin-top: 40px;
+    margin-bottom: 10px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .container {
-        width: 100%;
-        flex-direction: column;
-    }
+.partners-row {
+    display: flex;
+    gap: 15px;
+    border: 1px solid #000080;
+    padding: 10px;
+    display: inline-flex;
+    /* wrap nicely */
+}
 
-    aside {
-        width: 100%;
-        border-right: none;
-        border-bottom: 5px solid #94BDD6;
-    }
-
-    .news-item {
-        flex-direction: column;
-    }
-
-    .news-item img {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
+.partners-row img {
+    height: 35px;
 }

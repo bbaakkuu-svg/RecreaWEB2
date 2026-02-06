@@ -11,15 +11,6 @@
 
 <body>
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="news.html" class="active">Noticias</a></li>
-            </ul>
-        </nav>
-    </header>
-
     <div class="container">
         <aside>
             <nav>
@@ -34,50 +25,59 @@
         </aside>
 
         <main>
-            <img src="images/cabecera.jpg" alt="Cabecera RecreaWEB" class="hero-image">
+            <img src="images/cabecera.jpg" alt="Cabecera HacTe" class="hero-image">
 
-            <h1>Block News</h1>
+            <div class="news-header-block">
+                <h1>Block News</h1>
+            </div>
 
-            <article class="news-item">
+            <div class="news-card">
+                <h3>Chemical Ecosystem from Yolanda Uriz</h3>
                 <img src="images/Chemical.jpg" alt="Chemical Ecosystem">
-                <div class="news-content">
-                    <h3>Chemical Ecosystem from Yolanda Uriz</h3>
-                    <p>From June 15th to 17th, Hac Te and the recently created Red ACTS</p>
-                </div>
-            </article>
+                <p>From June 15th to 17th, Hac Te and the recently created Red ACTS</p>
+            </div>
 
-            <article class="news-item">
+            <div class="news-card">
+                <h3>Andy Gracie wins the Randa Art|Science Residency</h3>
                 <img src="images/gracie.png" alt="Andy Gracie">
-                <div class="news-content">
-                    <h3>Andy Gracie wins the Randa Art|Science Residency</h3>
-                    <p>We are thrilled to announce the Randa Art|Science Residency</p>
-                </div>
-            </article>
+                <p>We are thrilled to announce the Randa Art|Science Residency</p>
+            </div>
 
-            <article class="news-item">
+            <div class="news-card">
+                <h3>Open call for films generated with AI</h3>
                 <img src="images/film.png" alt="Film generated with AI">
-                <div class="news-content">
-                    <h3>Open call for films generated with AI</h3>
-                    <p>RAIN Film Fest is the first European festival of films generated with artificial intelligence</p>
-                </div>
-            </article>
+                <p>RAIN Film Fest is the first European festival of films generated with artificial intelligence</p>
+            </div>
+
+            <div class="content">
+                <section>
+                    <!-- Small logos footer also on news page? Reference images usually show footer consistency. -->
+                    <h2 class="who-is">Who is in Hac Te</h2>
+                    <div class="partners-row">
+                        <a href="https://www.uoc.edu/portal/ca/index.html"><img src="images/UOC.png"
+                                alt="Logotipo UOC"></a>
+                        <a href="https://www.upc.edu/ca"><img src="images/upc.png" alt="Logotipo UPC"></a>
+                        <a href="https://www.firabarcelona.com/es/"><img src="images/fira-barcelona.png"
+                                alt="Logotipo Fira Barcelona"></a>
+                        <a href="https://bist.eu/"><img src="images/bist.png" alt="Logotipo BIST"></a>
+                    </div>
+                </section>
+            </div>
         </main>
     </div>
 
     <footer>
-        <div class="credits">
-            <p>Reto 2 | Realizado por: Student Name</p>
-            <p>Asignatura "HTML y CSS"</p>
-        </div>
-
-        <h3>Who is in Hac Te</h3>
-        <div class="partners">
-            <a href="https://www.upc.edu/ca"><img src="images/upc.png" alt="Logotipo UPC"></a>
-            <a href="https://www.uoc.edu/portal/ca/index.html"><img src="images/UOC.png" alt="Logotipo UOC"></a>
-            <a href="https://bist.eu/"><img src="images/bist.png" alt="Logotipo BIST"></a>
-            <a href="https://www.firabarcelona.com/es/"><img src="images/fira-barcelona.png"
-                    alt="Logotipo Fira Barcelona"></a>
-            <img src="images/gracie.png" alt="Logotipo Gracie">
+        <div class="footer-inner">
+            <div class="footer-info">
+                <p>Reto 2</p>
+                <p>Realizado por: Student Name</p>
+                <p>Asignatura "HTML y CSS" Aula (indicar número)</p>
+            </div>
+            <div class="footer-info right-col">
+                <p>Elaborado a partir de HacTe</p>
+                <p>Se puede consultar completo en: hactebcn.org/en/</p>
+                <p>Fondo cabecera: Imagen de rawpixel.com en Freepik</p>
+            </div>
         </div>
     </footer>
 
