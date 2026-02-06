@@ -22,6 +22,7 @@ body {
     background-color: #fff;
     min-height: 100vh;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    /* Subtle shadow for depth */
     display: flex;
     align-items: stretch;
 }
@@ -30,10 +31,12 @@ body {
 aside {
     width: 250px;
     background-color: #fff;
+    /* Sidebar background */
     border-right: 1px solid #94BDD6;
-    /* Padding adjustments to align with content if needed */
-    padding-top: 150px;
-    padding-left: 0;
+    /* Sidebar separator */
+    padding-top: 250px;
+    /* Align with content start below header approx */
+    flex-shrink: 0;
 }
 
 nav ul {
@@ -52,6 +55,7 @@ nav a {
     font-weight: bold;
     font-style: italic;
     font-size: 16px;
+    /* Sidebar font size */
     display: block;
     padding: 10px 20px 10px 40px;
     /* Indent */
@@ -69,6 +73,14 @@ main {
     flex-grow: 1;
     background-color: #fff;
     padding-bottom: 40px;
+    position: relative;
+}
+
+/* Header Wrapper for Overlay */
+.header-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
 }
 
 /* Hero Image */
@@ -78,32 +90,36 @@ main {
     display: block;
 }
 
-/* Page Title "HacTe..." */
+/* Page Title "HacTe..." Overlaid */
 h1.main-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Centering */
+    width: 90%;
+    /* Prevent touching edges */
+
     font-family: 'Varela Round', sans-serif;
-    font-size: 36px;
+    font-size: 44px;
+    /* Large Title Size */
     text-align: center;
     color: #fff;
-    /* White text with shadow to look like image? Or Dark Gray? 
-       In the image it looks like "WordArt" style: White fill, dark outline/shadow?
-       Or standard dark gray on the white bg.
-       "HacTe. Hub of Art..."
-       Let's stick to a clean Dark Gray or the #94BDD6 if it matches header.
-       The PDF said "Varela Round para el encabezado principal".
-       Let's try a distinct Color + Shadow.
-    */
-    color: #555;
-    text-shadow: 2px 2px 0px #eee;
-    margin: 20px 0;
+    /* White Text */
+
+    /* Text Shadow to ensure readability against blue waves */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+    margin: 0;
+    line-height: 1.2;
     text-transform: none;
-    /* "HacTe. Hub..." mixed case */
-    font-weight: bold;
+    font-weight: normal;
 }
 
 /* The Blue Gradient Box (Intro) */
 .intro-box {
     background: linear-gradient(to bottom, #94BDD6 0%, #EBF7FF 100%);
-    padding: 40px;
+    padding: 30px 40px;
     margin: 0 50px 30px 50px;
     /* Margins to center it */
     text-align: center;
@@ -114,16 +130,21 @@ h1.main-title {
     font-family: 'Varela Round', sans-serif;
     text-transform: uppercase;
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     border: none;
-    /* No underline in the box */
     color: #000;
+    margin-top: 0;
+    /* Box specific reset */
+    padding-bottom: 0;
 }
 
 .intro-box p {
+    text-align: justify;
+    text-align-last: center;
+    /* Nice centering for justified block? Or just center. Text says "Explore... field." */
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
+    margin: 0;
+    font-size: 15px;
 }
 
 /* Content Area */
@@ -134,13 +155,13 @@ h1.main-title {
 /* Standard H2 */
 h2 {
     font-family: 'Varela Round', sans-serif;
-    font-size: 24px;
+    font-size: 22px;
     color: #000;
     margin-top: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-weight: bold;
     border-bottom: 1px solid #94BDD6;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }
 
 /* Custom List (Hac Te is) */
@@ -151,17 +172,20 @@ h2 {
 
 .custom-list li {
     position: relative;
-    padding-left: 30px;
+    padding-left: 35px;
     margin-bottom: 15px;
     font-size: 16px;
+    line-height: 1.4;
 }
 
 .custom-list li::before {
     content: "≡";
+    /* Hamburger icon lookalike */
     position: absolute;
     left: 0;
-    top: 0;
+    top: 2px;
     color: #000080;
+    /* Navy Blue */
     font-weight: bold;
     font-size: 20px;
     line-height: 1;
@@ -171,17 +195,16 @@ h2 {
 .press-release {
     background-color: #fff;
     margin-bottom: 25px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    /* Subtle shadow */
+    /* No border on outside container per se, mostly clean */
 }
 
 .press-header {
     background-color: #94BDD6;
     /* Blue header */
     color: #333;
-    padding: 10px 15px;
+    /* Dark text? Or standard? */
+    padding: 8px 15px;
     font-family: 'Varela Round', sans-serif;
-    /* Matching headers */
     font-weight: bold;
     font-size: 14px;
     border: 1px solid #94BDD6;
@@ -192,14 +215,14 @@ h2 {
     /* Light blue body */
     border: 1px solid #94BDD6;
     border-top: none;
-    padding: 20px;
-    padding-left: 80px;
-    /* Space for quote */
+    /* Connect to header */
+    padding: 20px 20px 20px 80px;
+    /* Left padding for Quotes */
     position: relative;
-    min-height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-height: 80px;
 }
 
 .press-body::before {
@@ -209,15 +232,14 @@ h2 {
     color: #94BDD6;
     position: absolute;
     left: 20px;
-    top: 0px;
-    line-height: 1;
+    top: 10px;
+    line-height: 0.8;
 }
 
 .press-body p {
     color: #777;
     font-style: italic;
     margin: 0;
-    text-align: left;
 }
 
 .press-body .author {
@@ -225,7 +247,7 @@ h2 {
     text-align: right;
     font-style: italic;
     font-size: 12px;
-    margin-top: 10px;
+    margin-top: 8px;
     color: #999;
 }
 
@@ -237,11 +259,12 @@ h2 {
     text-align: center;
 }
 
-.news-header-bar h2 {
+.news-header-bar h1 {
     margin: 0;
-    padding: 0;
-    border: none;
     font-size: 24px;
+    font-family: 'Varela Round', sans-serif;
+    border: none;
+    background: none;
 }
 
 /* News Cards */
@@ -249,7 +272,8 @@ h2 {
     border: 1px solid #94BDD6;
     border-radius: 10px;
     background-color: #fff;
-    margin: 30px 50px;
+    margin: 30px 80px;
+    /* Narrower columns */
     text-align: center;
     overflow: hidden;
     padding-bottom: 20px;
@@ -261,22 +285,24 @@ h2 {
     margin: 0;
     padding: 15px;
     font-family: 'Varela Round', sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     border-bottom: 1px solid #94BDD6;
 }
 
 .news-card img {
-    margin-top: 20px;
-    width: 250px;
-    height: 150px;
+    margin-top: 25px;
+    width: 280px;
+    /* Oval shape */
+    height: 160px;
     border-radius: 50%;
+    /* Pure Oval */
     border: 5px solid #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     object-fit: cover;
 }
 
 .news-card p {
-    padding: 0 20px;
+    padding: 0 25px;
     margin-top: 15px;
     font-style: italic;
     font-size: 13px;
@@ -293,7 +319,7 @@ footer {
 .footer-inner {
     width: 1200px;
     margin: 0 auto;
-    padding: 20px 40px;
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -301,33 +327,36 @@ footer {
 }
 
 .footer-info p {
-    margin: 3px 0;
+    margin: 2px 0;
     font-size: 12px;
-    text-align: left;
     color: #fff;
 }
 
-.footer-info.right p {
+.footer-info.right {
     text-align: right;
 }
 
 .who-is {
+    font-family: 'Varela Round', sans-serif;
     font-size: 20px;
     color: #000;
     border-bottom: 1px solid #94BDD6;
     margin-top: 40px;
     margin-bottom: 10px;
+    padding-bottom: 5px;
 }
 
 .partners-row {
-    display: flex;
-    gap: 15px;
-    border: 1px solid #000080;
-    padding: 10px;
     display: inline-flex;
-    /* wrap nicely */
+    gap: 20px;
+    border: 1px solid #000080;
+    /* Navy box around logos */
+    padding: 10px 20px;
+    background-color: #fff;
 }
 
 .partners-row img {
     height: 35px;
+    width: auto;
+    display: block;
 }
