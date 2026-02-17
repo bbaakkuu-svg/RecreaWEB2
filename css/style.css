@@ -79,14 +79,17 @@ main {
 /* Envoltorio de la Cabecera para Superposición */
 .header-wrapper {
     position: relative;
-    width: 100%;
-    margin-bottom: 30px;
+    width: 1200px;
+    margin: 0 auto 30px;
+    height: 200px;
+    overflow: hidden;
 }
 
 /* Imagen Hero */
 .hero-image {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
 }
 
@@ -144,7 +147,7 @@ h1.main-title {
     /* Centrado agradable para bloque justificado */
     text-align: center;
     margin: 0;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 /* Área de Contenido */
@@ -155,7 +158,7 @@ h1.main-title {
 /* H2 Estándar */
 h2 {
     font-family: 'Varela Round', sans-serif;
-    font-size: 22px;
+    font-size: 18px;
     color: #000;
     margin-top: 30px;
     margin-bottom: 15px;
@@ -172,23 +175,33 @@ h2 {
 
 .custom-list li {
     position: relative;
-    padding-left: 35px;
-    margin-bottom: 15px;
+    padding-left: 50px;
+    margin-bottom: 20px;
     font-size: 16px;
     line-height: 1.4;
+    font-weight: bold;
 }
 
 .custom-list li::before {
-    content: "≡";
-    /* Icono tipo hamburguesa */
+    content: "";
     position: absolute;
     left: 0;
-    top: 2px;
-    color: #000080;
-    /* Azul Marino */
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 1;
+    top: 0;
+    width: 15px;
+    height: 40px;
+    background:
+        linear-gradient(to right, #000080, #000080) 0 0 no-repeat,
+        linear-gradient(to right, #000080, #000080) 0 0 no-repeat,
+        linear-gradient(to right, #000080, #000080) 0 0 no-repeat;
+    background-size:
+        12px 4px,
+        8px 4px,
+        4px 4px;
+    background-position:
+        0 0,
+        0 8px,
+        0 16px;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
 }
 
 /* Notas de Prensa (Press Releases) */
@@ -321,9 +334,30 @@ footer {
     margin: 0 auto;
     padding: 15px 40px;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
     color: #fff;
+}
+
+.footer-divider {
+    width: 2px;
+    height: 80px;
+    background-color: #fff;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-info.left {
+    align-items: flex-end;
+}
+
+.footer-info.right {
+    align-items: flex-start;
 }
 
 .footer-info p {
@@ -332,31 +366,67 @@ footer {
     color: #fff;
 }
 
-.footer-info.right {
-    text-align: right;
-}
+
 
 .who-is {
     font-family: 'Varela Round', sans-serif;
-    font-size: 20px;
+    font-size: 36px;
     color: #000;
-    border-bottom: 1px solid #94BDD6;
+    border-bottom: 1px solid #000080;
     margin-top: 40px;
     margin-bottom: 10px;
     padding-bottom: 5px;
 }
 
 .partners-row {
-    display: inline-flex;
+    display: flex;
     gap: 20px;
-    border: 1px solid #000080;
-    /* Caja Azul Marino alrededor de logos */
-    padding: 10px 20px;
+    padding: 20px 40px;
     background-color: #fff;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 2px solid #f5f5f7;
+    margin: 0 20px 20px;
+    width: calc(100% - 80px);
+    max-width: calc(100% - 40px);
+    box-sizing: border-box;
 }
 
-.partners-row img {
-    height: 35px;
+.partner-item {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    border: 1px solid #020259;
+    flex: 1;
+    min-width: 150px;
+    max-width: 250px;
+}
+
+.partner-item img {
+    height: 60px;
     width: auto;
     display: block;
+    margin: 10px auto;
+    object-fit: contain;
+    max-width: 100%;
+}
+
+.partner-item .barra_azul {
+    background-color: #0505f1;
+    color: #fff;
+    padding: 3px 10px;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    display: inline-block;
+    width: auto;
+    min-width: 8%;
+}
+
+.partner-item .barra_azul h3 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: normal;
 }
